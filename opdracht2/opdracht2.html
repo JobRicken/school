@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  
+</head>
+<body>
+<canvas id="kometen">
+
+
+</canvas>
+<script>
+    const c = document.getElementById("kometen");
+    const ctx = c.getContext("2d");
+
+function komeet(diameter,snelheid,x,y,vector) {
+
+this.diameter = diameter;
+this.snelheid = snelheid;
+this.x = x;
+this.y = y;
+this.vector = vector;
+}
+
+
+        komeet.prototype.setDiameter = function (diameter) {
+            this.diameter = diameter;
+        }
+
+        komeet.prototype.getDiameter = function () {
+            return this.diameter
+        }
+        komeet.prototype.setSnelheid = function (snelheid) {
+            this.snelheid = snelheid;
+        }
+        komeet.prototype.getSnelheid = function () {
+            return this.snelheid
+
+        };
+
+        komeet.prototype.setX = function (x) {
+            this.x = x;
+        };
+
+        komeet.prototype.getX = function () {
+            return this.x
+
+        };
+
+        komeet.prototype.setY = function (y) {
+            this.y = y;
+        };
+
+        komeet.prototype.getY = function () {
+            return this.y
+
+        };
+
+        komeet.prototype.setVector = function (vector) {
+            this.vector = vector;
+        };
+
+        komeet.prototype.getVector = function () {
+            return this.vector
+        };
+
+
+    const komeet1= new komeet(30,50,50,60,[10,20]);
+const komeet2= new komeet(25,50,30,70,[20,25]);
+    console.log(komeet1);
+console.log(komeet2);
+
+    ctx.beginPath();
+    ctx.arc(komeet1.getX(), komeet1.getY(), komeet1.getDiameter(), 0, 2 * Math.PI);
+
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.arc(komeet2.getX(), komeet2.getY(), komeet2.getDiameter(), 0, 2 * Math.PI);
+    ctx.stroke();
+</script>
+</body>
+</html>
